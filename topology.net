@@ -1,0 +1,404 @@
+autostart = False
+[127.0.0.1:7202]
+    workingdir = working
+    udp = 10200
+    [[7200]]
+        image = IOS\c7200-a3jk9s-mz.124-25g.bin
+        idlepc = 0x6066a998
+        ghostios = True
+    [[ROUTER R2]]
+        console = 2008
+        aux = 2100
+        cnfg = configs\R2.cfg
+        slot0 = C7200-IO-2FE
+        slot1 = PA-8T
+        s1/0 = R1 s1/0
+        s1/1 = R5 s1/0
+        x = -349.783837972
+        y = -227.060966544
+    [[ROUTER R3]]
+        console = 2006
+        aux = 2101
+        cnfg = configs\R3.cfg
+        slot0 = C7200-IO-2FE
+        slot1 = PA-8T
+        s1/0 = R1 s1/1
+        s1/1 = R4 s1/0
+        x = 13.6690475583
+        y = -195.948268172
+[qemu 127.0.0.1:10525]
+    workingdir = working
+    udp = 20000
+    [[QemuDevice]]
+        image = linux-tinycore-3.8.2.img
+        netcard = e1000
+        options = -no-acpi
+    [[QEMU PC2]]
+        e0 = SW3 2
+        x = -551.516377391
+        y = 319.810749906
+    [[QEMU PC3]]
+        e0 = SW2 2
+        x = 183.874675043
+        y = 277.384343035
+    [[QEMU PC1]]
+        e0 = SW1 2
+        x = 95.8074323758
+        y = -411.75988463
+[127.0.0.1:7200]
+    workingdir = working
+    udp = 10000
+    [[7200]]
+        image = IOS\c7200-a3jk9s-mz.124-25g.bin
+        idlepc = 0x6066a998
+        ghostios = True
+    [[ROUTER R4]]
+        console = 2002
+        aux = 2102
+        cnfg = configs\R4.cfg
+        slot0 = C7200-IO-2FE
+        slot1 = PA-8T
+        s1/0 = R3 s1/1
+        s1/1 = R7 s1/0
+        x = 190.445742855
+        y = -46.0416305603
+    [[ROUTER R7]]
+        console = 2003
+        aux = 2103
+        cnfg = configs\R7.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = SW2 1
+        slot1 = PA-8T
+        s1/0 = R4 s1/1
+        x = 327.624458405
+        y = 62.8528137424
+    [[ETHSW SW1]]
+        1 = access 1 R1 f0/0
+        2 = access 1 PC1 e0
+        x = -65.1984848098
+        y = -406.322943215
+    [[ETHSW SW2]]
+        1 = access 1 R7 f0/0
+        2 = access 1 PC3 e0
+        x = 315.224963469
+        y = 204.61731573
+        hx = -46.6898628385
+        hy = -9.4436508139
+[127.0.0.1:7201]
+    workingdir = working
+    udp = 10100
+    [[7200]]
+        image = IOS\c7200-a3jk9s-mz.124-25g.bin
+        idlepc = 0x6066a998
+        ghostios = True
+    [[ROUTER R5]]
+        console = 2004
+        aux = 2104
+        cnfg = configs\R5.cfg
+        slot0 = C7200-IO-2FE
+        slot1 = PA-8T
+        s1/0 = R2 s1/1
+        s1/1 = R6 s1/0
+        x = -537.874241767
+        y = -99.7817459305
+    [[ROUTER R6]]
+        console = 2005
+        aux = 2105
+        cnfg = configs\R6.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = SW3 1
+        slot1 = PA-8T
+        s1/0 = R5 s1/1
+        x = -655.253967444
+        y = 34.5685424949
+    [[ETHSW SW3]]
+        1 = access 1 R6 f0/0
+        2 = access 1 PC2 e0
+        x = -645.026045383
+        y = 193.303607231
+        hx = -41.7401153702
+        hy = -6.61522368915
+[127.0.0.1:7203]
+    workingdir = working
+    udp = 10300
+    [[7200]]
+        image = IOS\c7200-a3jk9s-mz.124-25g.bin
+        idlepc = 0x6066a998
+        ghostios = True
+    [[ROUTER R1]]
+        console = 2010
+        aux = 2106
+        cnfg = configs\R1.cfg
+        slot0 = C7200-IO-2FE
+        f0/0 = SW1 1
+        slot1 = PA-8T
+        s1/0 = R2 s1/0
+        s1/1 = R3 s1/0
+        x = -232.404112295
+        y = -362.825468532
+[GNS3-DATA]
+    configs = configs
+    workdir = working
+    m11 = 0.707106781187
+    m22 = 0.707106781187
+    [[NOTE 1]]
+        text = AS 200
+        x = 121.622366364
+        y = 97.2228714274
+    [[NOTE 2]]
+        text = AS 300
+        x = -415.778787337
+        y = 83.0807358037
+    [[NOTE 3]]
+        text = .2
+        x = -280.01428535
+        y = -239.359956417
+    [[NOTE 4]]
+        text = .2
+        x = 5.65685424949
+        y = -228.046247918
+    [[NOTE 5]]
+        text = 110.110.56.0/30
+        x = -56.5685424949
+        y = -293.100071787
+    [[NOTE 6]]
+        text = .1
+        x = 376.180807591
+        y = 112.779220614
+    [[NOTE 7]]
+        text = .1
+        x = -172.53405461
+        y = -397.751875403
+    [[NOTE 8]]
+        text = .2
+        x = 294.156420974
+        y = 64.6959594929
+    [[NOTE 9]]
+        text = 100.100.56.0/30
+        x = -407.293505963
+        y = -314.313275223
+    [[NOTE 10]]
+        text = .1
+        x = -519.016377391
+        y = -51.2695526217
+    [[NOTE 11]]
+        text = .2
+        x = 66.4680374315
+        y = -368.053390593
+    [[NOTE 12]]
+        text = .1
+        x = -606.697618258
+        y = 84.4949493661
+    [[NOTE 13]]
+        text = .2
+        x = 159.806132548
+        y = -51.2695526217
+    [[NOTE 14]]
+        text = 140.140.56.0/30
+        x = 127.279220614
+        y = 34.9974746831
+    [[NOTE 15]]
+        text = 200.200.56.0/28
+        x = -101.823376491
+        y = -467.048339959
+    [[NOTE 16]]
+        text = 220.220.56.0/28
+        x = 176.776695297
+        y = 139.649278299
+    [[NOTE 17]]
+        text = .1
+        x = -224.859956417
+        y = -301.585353162
+    [[NOTE 18]]
+        text = 130.130.56.0/30
+        x = -551.543289326
+        y = -7.42893218813
+    [[NOTE 19]]
+        text = 210.210.56.0/28
+        x = -562.856997824
+        y = 238.644227665
+    [[NOTE 20]]
+        text = .1
+        x = -149.906637612
+        y = -342.597546471
+    [[NOTE 21]]
+        text = 160.160.56.0/30
+        x = -25.4558441227
+        y = -65.4116882454
+    [[NOTE 22]]
+        text = .1
+        x = 265.872149726
+        y = -34.2989898732
+    [[NOTE 23]]
+        text = .2
+        x = 244.658946291
+        y = 285.313275223
+    [[NOTE 24]]
+        text = .1
+        x = 90.5096679919
+        y = -170.063491861
+    [[NOTE 25]]
+        text = 120.120.56.0/30
+        x = -560.0285707
+        y = -188.448268172
+    [[NOTE 26]]
+        text = .2
+        x = -459.619407771
+        y = -109.252308679
+    [[NOTE 27]]
+        text = .2
+        x = -581.241774135
+        y = 306.526478659
+    [[NOTE 28]]
+        text = .2
+        x = -589.72705551
+        y = 16.6126983722
+    [[NOTE 29]]
+        text = .1
+        x = -336.582827845
+        y = -188.448268172
+    [[NOTE 30]]
+        text = 2
+        x = 1.84135414771
+        y = 37.6123936525
+        interface = SW2 2
+    [[NOTE 31]]
+        text = 1
+        x = 38.4089437237
+        y = -23.8940853563
+        interface = SW2 1
+    [[NOTE 32]]
+        text = 2
+        x = 57.2159801774
+        y = 49.5919068369
+        interface = SW3 2
+    [[NOTE 33]]
+        text = 1
+        x = 32.1781808059
+        y = -23.8618303298
+        interface = SW3 1
+    [[NOTE 34]]
+        text = 2
+        x = 75.4480200648
+        y = 18.0385516687
+        interface = SW1 2
+    [[NOTE 35]]
+        text = 1
+        x = -2.90000000001
+        y = 27.2
+        interface = SW1 1
+    [[NOTE 36]]
+        text = e0
+        x = -7.44802006476
+        y = 27.4614483313
+        interface = PC1 e0
+    [[NOTE 37]]
+        text = e0
+        x = 66.1586458523
+        y = 7.88760634751
+        interface = PC3 e0
+    [[NOTE 38]]
+        text = e0
+        x = 10.7840198226
+        y = -4.09190683685
+        interface = PC2 e0
+    [[NOTE 39]]
+        text = s1/0
+        x = -49.6072672622
+        y = -8.10080677363
+        interface = R3 s1/0
+    [[NOTE 40]]
+        text = s1/1
+        x = 65.5626061478
+        y = 45.2309423155
+        interface = R3 s1/1
+    [[NOTE 41]]
+        text = s1/0
+        x = 55.8355080777
+        y = -10.8411262114
+        interface = R2 s1/0
+    [[NOTE 42]]
+        text = s1/1
+        x = 1.90037526992
+        y = 47.1557814756
+        interface = R2 s1/1
+    [[NOTE 43]]
+        text = s1/1
+        x = 67.5240061416
+        y = 42.201311837
+        interface = R1 s1/1
+    [[NOTE 44]]
+        text = s1/0
+        x = 10.1644919223
+        y = 54.8411262114
+        interface = R1 s1/0
+    [[NOTE 45]]
+        text = f0/0
+        x = 71.4
+        y = 10.8
+        interface = R1 f0/0
+    [[NOTE 46]]
+        text = f0/0
+        x = 30.0910562763
+        y = 61.8940853563
+        interface = R7 f0/0
+    [[NOTE 47]]
+        text = s1/0
+        x = -0.818997919914
+        y = 0.639396551294
+        interface = R7 s1/0
+    [[NOTE 48]]
+        text = f0/0
+        x = 36.3218191941
+        y = 61.8618303298
+        interface = R6 f0/0
+    [[NOTE 49]]
+        text = s1/0
+        x = 55.9871726853
+        y = -10.7351476541
+        interface = R6 s1/0
+    [[NOTE 50]]
+        text = s1/1
+        x = 10.0128273147
+        y = 54.7351476541
+        interface = R5 s1/1
+    [[NOTE 51]]
+        text = s1/0
+        x = 64.0996247301
+        y = -3.1557814756
+        interface = R5 s1/0
+    [[NOTE 52]]
+        text = s1/1
+        x = 66.8189979199
+        y = 43.3606034487
+        interface = R4 s1/1
+    [[NOTE 53]]
+        text = s1/0
+        x = 0.437393852222
+        y = -1.23094231547
+        interface = R4 s1/0
+    [[SHAPE 1]]
+        type = ellipse
+        x = -705.692567624
+        y = -138.592929113
+        width = 371.938166904
+        height = 581.241774135
+        border_style = 2
+        z = -2.0
+    [[SHAPE 2]]
+        type = ellipse
+        x = 77.6015510839
+        y = -103.773123959
+        width = 373.553390593
+        height = 491.945309579
+        border_style = 2
+        z = -2.0
+    [[SHAPE 3]]
+        type = ellipse
+        x = -417.1930009
+        y = -494.974746831
+        width = 705.692567624
+        height = 422.84985515
+        fill_color = "#ffffff"
+        border_style = 2
+        z = -4.0
