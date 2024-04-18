@@ -5,4 +5,6 @@
 nhau
 3. Cấu hình định tuyến BGP và Redistribute để tất cả các máy tính giữa ở các AS có
 thể liên lạc được với nhau.
+
+
 ![image](https://github.com/NguyetNguyet-oo/Internet-Routing/assets/134104269/faf6bef3-1f6e-4a92-a69f-2ada943fbe68)
